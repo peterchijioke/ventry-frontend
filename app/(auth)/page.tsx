@@ -85,6 +85,7 @@ export default function SignInPage() {
       toast.success('Login successful', {
         position: 'top-right',
       });
+      signInForm.reset();
     } catch (error: any) {
       toast.error(
         error.response?.data?.error || 'An error occurred during sign-in',
@@ -115,6 +116,7 @@ export default function SignInPage() {
         localStorage.setItem('token', token);
         console.log('Sign-Up Successful:', response.data);
       }
+      signUpForm.reset();
     } catch (error: any) {
       const errorMessage =
         error.response?.data?.error || 'An error occurred during sign-up';
